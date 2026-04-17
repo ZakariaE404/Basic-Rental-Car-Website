@@ -5,28 +5,7 @@
  * Handles dynamic rendering of car fleet, contact links, and scroll animations.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Check if SITE_DATA is available
-    if (typeof SITE_DATA === 'undefined') {
-        console.error('SITE_DATA is not defined. Ensure data.js is loaded before main.js.');
-        return;
-    }
-
-    // 2. Initialize Scroll Reveal Observer
-    initScrollReveal();
-
-    // 3. Render Fleet Grids
-    renderFeaturedFleet();
-    renderFullFleet();
-
-    // 4. Inject Dynamic Information
-    injectContactDetails();
-    injectBrandDetails();
-    injectSocialLinks();
-
-    // 5. Initialize Mobile Menu
-    initMobileMenu();
-});
+// Initialization is handled by the single DOMContentLoaded listener at the bottom of this file.
 
 /**
  * Initialize IntersectionObserver for scroll-reveal animations.

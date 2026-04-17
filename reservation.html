@@ -308,37 +308,6 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Mobile Menu
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        let isOpen = false;
-
-        if (btn) {
-            btn.addEventListener('click', () => {
-                isOpen = !isOpen;
-                if (isOpen) {
-                    menu.classList.remove('hidden');
-                    icon.classList.replace('ph-list', 'ph-x');
-                } else {
-                    menu.classList.add('hidden');
-                    icon.classList.replace('ph-x', 'ph-list');
-                }
-            });
-        }
-        
-        // Scroll Reveal Animations
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
         // URL Params Logic
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
