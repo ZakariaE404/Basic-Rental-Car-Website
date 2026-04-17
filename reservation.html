@@ -1,169 +1,359 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth bg-[#050505]">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finaliser la Réservation - Prestige Auto-</title>
-    <meta name="description" content="Finalisez votre réservation de véhicule de luxe avec Prestige Auto Morocco.">
+
+    <!-- Primary Meta Tags -->
+    <title>Finaliser la Réservation | Prestige Auto - Excellence Automobile</title>
+    <meta name="description" content="Finalisez votre réservation de véhicule de luxe avec Prestige Auto Morocco. Contactez notre conciergerie 24/7.">
     <meta name="robots" content="noindex, follow">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="imgs/icons/prestigeauto_logo.png">
-    <!-- Tailwind CSS (via CDN pour le développement) -->
+    <link rel="apple-touch-icon" href="imgs/icons/prestigeauto_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- Configuration Tailwind & Custom CSS -->
+
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['"Montserrat"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
                     colors: {
+                        base: '#050505',
+                        surface: '#121212',
                         brand: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            500: '#22c55e',
-                            600: '#16a34a',
-                            700: '#15803d',
-                            900: '#14532d',
+                            50: '#f5f0e6',
+                            100: '#e1d0a8',
+                            600: '#D4AF37',
+                            900: '#121212',
                         },
                         accent: {
-                            500: '#eab308',
+                            400: '#e1d0a8',
+                            500: '#D4AF37',
+                            600: '#b08d29',
                         }
                     },
-                    fontFamily: {
-                        sans: ['"Inter"', 'sans-serif'],
+                    backgroundImage: {
+                        'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
+                    },
+                    backgroundSize: {
+                        'grid': '4rem 4rem',
                     }
                 }
             }
         }
     </script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+        }
+
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .luxury-glass {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f5d67a 0%, #D4AF37 50%, #b08d29 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-press:active {
+            transform: scale(0.98);
+        }
+
+        .ghost-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.1);
+        }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
-    <!-- Navbar Rapide -->
-    <header
-        class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div
-                    class="w-10 h-10 flex items-center justify-center text-white group-hover:shadow-brand-600/50 transition-shadow">
-                    <img src="./imgs/icons/prestigeauto_logo.png" alt="Prestige Auto Logo">
+<body class="font-sans antialiased selection:bg-accent-500 selection:text-base cursor-default overflow-x-hidden pt-28 bg-base">
+
+    <!-- HEADER -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-nav py-4">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <span class="font-serif text-2xl tracking-widest text-white uppercase"><span data-brand-name>Prestige</span> <span data-brand-accent class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-12">
+                    <a href="index.html" class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Accueil</a>
+                    <a href="vehicule.html" class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Flotte</a>
+                    <a href="index.html#services" class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Services</a>
+                    <a href="contact.html" class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Contact</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden md:block">
+                    <a href="reservation.html" data-site-whatsapp class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white hover:text-accent-500 hover:border-accent-500 transition-all duration-300 rounded-none text-xs uppercase tracking-[0.2em] btn-press ghost-glow">
+                        <i class="ph-fill ph-whatsapp-logo text-lg text-[#25D366]"></i>
+                        Réserver
+                    </a>
                 </div>
-                <span class="text-2xl font-extrabold tracking-tight"><span data-brand-name>Prestige</span><span
-                        data-brand-accent class="text-brand-600">Auto</span></span>
-            </a>
-            <a href="index.html"
-                class="flex items-center gap-2 text-slate-600 font-semibold hover:text-brand-600 transition-colors">
-                <i class="ph-bold ph-arrow-left"></i>
-                <span>Retour à l'accueil</span>
-            </a>
+
+                <!-- Mobile Trigger -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent-500 transition-colors">
+                    <i class="ph-light ph-list text-3xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 luxury-glass border-b border-white/10 mt-2">
+            <div class="px-6 py-8 flex flex-col items-center space-y-6">
+                <a href="index.html" class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Accueil</a>
+                <a href="vehicule.html" class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Flotte</a>
+                <a href="index.html#services" class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Services</a>
+                <a href="contact.html" class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Contact</a>
+                <a href="reservation.html" data-site-whatsapp class="w-full mt-4 py-4 border border-accent-500 text-accent-500 flex items-center justify-center gap-2 uppercase tracking-widest text-xs hover:bg-accent-500 hover:text-black transition-colors">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                    Réserver
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow flex items-center justify-center pt-28 pb-16 px-4">
-        <div class="max-w-2xl w-full text-center">
-
-            <div class="w-20 h-20 mx-auto bg-brand-100 rounded-full flex items-center justify-center mb-6"
-                id="success-icon">
-                <i class="ph-fill ph-check-circle text-5xl text-brand-600"></i>
+    <!-- PAGE HEADER -->
+    <section class="pt-32 pb-12 bg-base relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-[0.1] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+            <div class="max-w-3xl mx-auto reveal">
+                <span class="inline-block text-[10px] uppercase tracking-[0.3em] text-accent-500 mb-6 border-l border-accent-500 pl-4 py-1">Étape Finale</span>
+                <h1 class="text-5xl lg:text-7xl font-serif text-white tracking-tight leading-tight">
+                    Finalisez Votre <br>
+                    <span class="italic font-light text-gray-500">Expérience.</span>
+                </h1>
+                <p class="mt-8 text-gray-400 text-lg font-light leading-relaxed">Contactez notre conciergerie pour confirmer la disponibilité et valider votre réservation en quelques instants.</p>
             </div>
+        </div>
+    </section>
 
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Prêt à réserver ?
-            </h1>
-            <p class="text-lg text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">
-                Contactez-nous pour finaliser votre réservation. Notre équipe est disponible 24/7 pour vous confirmer la
-                disponibilité de votre véhicule.
-            </p>
-
-            <!-- Selected Car (Hidden by default, shown via JS) -->
-            <div id="selected-car-container"
-                class="hidden mb-10 bg-white p-4 rounded-3xl border border-slate-100 shadow-sm inline-block w-full max-w-sm">
-                <div
-                    class="bg-slate-50 rounded-2xl mb-4 h-40 flex items-center justify-center img-zoom-container overflow-hidden">
-                    <img id="selected-car-img" src="" alt="Véhicule sélectionné"
-                        class="w-full h-full object-cover mix-blend-multiply">
+    <!-- MAIN CONTENT -->
+    <main class="pb-24 px-6 md:px-12 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            
+            <!-- Selected Car Info -->
+            <div id="selected-car-container" class="hidden mb-16 reveal" style="transition-delay: 100ms;">
+                <div class="luxury-glass p-8 rounded-3xl border border-white/10 flex flex-col md:flex-row items-center gap-10">
+                    <div class="w-full md:w-1/2 h-64 bg-surface rounded-2xl overflow-hidden flex items-center justify-center p-6 bg-gradient-to-b from-surface to-base">
+                        <img id="selected-car-img" src="" alt="Véhicule sélectionné" class="w-full h-full object-contain transform hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <span class="text-xs uppercase tracking-widest text-accent-500 font-bold mb-2 block">Choix d'Excellence</span>
+                        <h3 id="selected-car-name" class="text-3xl md:text-5xl font-serif text-white mb-4">Nom du Véhicule</h3>
+                        <p class="text-gray-400 font-light leading-relaxed">Vous avez sélectionné une pièce maîtresse de notre collection. Nos experts sont prêts à orchestrer votre départ.</p>
+                    </div>
                 </div>
-                <h3 id="selected-car-name" class="text-xl font-bold text-slate-900">Nom du Véhicule</h3>
-                <p class="text-sm text-slate-500 mt-1">Excellent choix !</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-6 max-w-xl mx-auto">
+            <!-- Generic Header if no car selected -->
+            <div id="generic-header" class="mb-16 text-center reveal">
+                <div class="w-20 h-20 mx-auto bg-accent-500/10 rounded-full flex items-center justify-center mb-6">
+                    <i class="ph-fill ph-check-circle text-5xl text-accent-500"></i>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto reveal" style="transition-delay: 200ms;">
+                
+                <!-- WhatsApp Option -->
                 <a href="#" target="_blank" data-site-whatsapp id="wa-link"
-                    class="group relative flex flex-col items-center justify-center p-8 bg-white rounded-3xl border-2 border-[#25D366] hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-xl shadow-[#25D366]/20 overflow-hidden transform hover:-translate-y-1">
-                    <div
-                        class="w-16 h-16 mb-4 rounded-2xl bg-[#25D366]/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                        <i class="ph-fill ph-whatsapp-logo text-4xl text-[#25D366] group-hover:text-white"></i>
+                    class="group relative flex flex-col items-center justify-center p-10 luxury-glass rounded-3xl border border-white/10 hover:border-[#25D366]/50 transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-[#25D366]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-20 h-20 mb-6 rounded-2xl bg-[#25D366]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-whatsapp-logo text-5xl text-[#25D366]"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-white text-slate-900">WhatsApp</h3>
-                    <p class="text-sm font-medium text-slate-500 group-hover:text-white/80">Réponse immédiate</p>
-
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-2xl font-serif text-white mb-2">WhatsApp</h3>
+                    <p class="text-sm font-light text-gray-500 text-center">Réponse instantanée par notre service client</p>
+                    <div class="mt-6 px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase tracking-widest text-gray-400 group-hover:border-[#25D366]/30 group-hover:text-[#25D366] transition-colors">
+                        Discuter maintenant
                     </div>
                 </a>
 
-                <!-- Email Button -->
+                <!-- Email Option -->
                 <a href="#" data-site-email id="email-link"
-                    class="group relative flex flex-col items-center justify-center p-8 bg-white rounded-3xl border-2 border-brand-600 hover:bg-brand-600 hover:text-white transition-all duration-300 shadow-xl shadow-brand-600/20 overflow-hidden transform hover:-translate-y-1">
-                    <div
-                        class="w-16 h-16 mb-4 rounded-2xl bg-brand-50 flex items-center justify-center group-hover:bg-white/20 transition-colors">
-                        <i class="ph-fill ph-envelope-simple text-4xl text-brand-600 group-hover:text-white"></i>
+                    class="group relative flex flex-col items-center justify-center p-10 luxury-glass rounded-3xl border border-white/10 hover:border-accent-500/50 transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+                    <div class="absolute inset-0 bg-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-20 h-20 mb-6 rounded-2xl bg-accent-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                        <i class="ph-fill ph-envelope-simple text-5xl text-accent-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-white text-slate-900">Email</h3>
-                    <p class="text-sm font-medium text-slate-500 group-hover:text-white/80">Nous vous recontactons</p>
-
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/0 via-black/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <h3 class="text-2xl font-serif text-white mb-2">Email</h3>
+                    <p class="text-sm font-light text-gray-500 text-center">Demande formelle et confirmation écrite</p>
+                    <div class="mt-6 px-6 py-2 rounded-full border border-white/10 text-[10px] uppercase tracking-widest text-gray-400 group-hover:border-accent-500/30 group-hover:text-accent-500 transition-colors">
+                        Envoyer un message
                     </div>
                 </a>
             </div>
 
-            <div class="mt-12 text-slate-500 text-sm font-medium">
-                Ou appelez-nous directement au <br class="sm:hidden" />
+            <!-- Phone Footer -->
+            <div class="mt-20 text-center reveal" style="transition-delay: 300ms;">
+                <p class="text-gray-500 text-sm font-light uppercase tracking-[0.2em] mb-4">Assistance Téléphonique 24/7</p>
                 <a href="tel:212713440903" data-site-phone
-                    class="text-brand-600 hover:underline font-bold text-lg inline-flex items-center gap-2 mt-2">
-                    <i class="ph-fill ph-phone-call"></i> +212 7 13 44 09 03
+                    class="text-white hover:text-accent-500 text-3xl font-serif transition-colors inline-flex items-center gap-4">
+                    <i class="ph-fill ph-phone-call text-accent-500"></i> +212 7 13 44 09 03
                 </a>
             </div>
-
         </div>
     </main>
 
-    <!-- Simple Footer for Reservation Page -->
-    <footer class="bg-white border-t border-slate-100 py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">&copy; <span id="currentYear">2024</span> <span
-                    data-brand-name>Prestige</span> <span data-brand-accent>Auto</span>. Tous droits réservés.</p>
-            <div class="flex justify-center gap-6 mt-4 text-sm">
-                <a href="privacy.html" class="text-slate-400 hover:text-brand-600 transition-colors">Politique de
-                    Confidentialité</a>
-                <a href="terms.html" class="text-slate-400 hover:text-brand-600 transition-colors">Conditions
-                    Générales</a>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 bg-base pt-24 pb-12">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+                <!-- Branding -->
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="inline-block mb-8">
+                        <span class="font-serif text-3xl tracking-widest text-white uppercase">Prestige <span class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
+                    </a>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm" data-brand-tagline>
+                        La référence de la location de véhicules d'exception au Maroc. L'élégance en mouvement.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#" data-social-facebook class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="Facebook"><i class="ph-light ph-facebook-logo text-2xl"></i></a>
+                        <a href="#" data-social-instagram class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="Instagram"><i class="ph-light ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" data-social-linkedin class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="LinkedIn"><i class="ph-light ph-linkedin-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Navigation</h4>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Accueil</a></li>
+                        <li><a href="vehicule.html" class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">La Collection</a></li>
+                        <li><a href="index.html#services" class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Nos Services</a></li>
+                        <li><a href="contact.html" class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Contact Réservation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Information</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <i class="ph-light ph-map-pin text-accent-500 text-xl mt-0.5"></i>
+                            <span class="text-gray-400 text-sm font-light" data-site-address-full>Boulevard d'Anfa<br>Casablanca, Maroc</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-phone text-accent-500 text-xl"></i>
+                            <a href="tel:212713440903" data-site-phone class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">+212 7 13 44 09 03</a>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-envelope text-accent-500 text-xl"></i>
+                            <a href="mailto:prestigeauto@gmail.com" data-site-email class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">prestigeauto@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5">
+                <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 Prestige Auto. Tous droits réservés.</p>
+                <div class="flex gap-8">
+                    <a href="privacy.html" class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Confidentialité</a>
+                    <a href="terms.html" class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Conditions</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    
     <script>
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        let isOpen = false;
+
+        if (btn) {
+            btn.addEventListener('click', () => {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    menu.classList.remove('hidden');
+                    icon.classList.replace('ph-list', 'ph-x');
+                } else {
+                    menu.classList.add('hidden');
+                    icon.classList.replace('ph-x', 'ph-list');
+                }
+            });
+        }
+        
+        // Scroll Reveal Animations
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // URL Params Logic
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const carName = urlParams.get('car');
             const carImg = urlParams.get('img');
 
             if (carName) {
-                // Show car info
                 document.getElementById('selected-car-container').classList.remove('hidden');
                 document.getElementById('selected-car-name').textContent = carName;
-                document.getElementById('success-icon').classList.add('hidden'); // Hide the generic checkmark to save space
+                document.getElementById('generic-header').classList.add('hidden');
 
                 if (carImg) {
                     document.getElementById('selected-car-img').src = carImg;
                 }
 
-                // Let main.js handle the base logic, we just inject the dynamic messages
                 const waLink = document.getElementById('wa-link');
                 const message = `Bonjour, je souhaite réserver le véhicule : ${carName}. Quelles sont vos disponibilités ?`;
                 waLink.setAttribute('data-wa-message', message);
@@ -174,8 +364,12 @@
             }
         });
     </script>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" data-site-whatsapp target="_blank"
+        class="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group">
+        <i class="ph-fill ph-whatsapp-logo text-4xl"></i>
+    </a>
 </body>
 
 </html>

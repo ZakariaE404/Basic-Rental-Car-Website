@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Primary Meta Tags -->
     <title>Notre Flotte | Prestige Auto - Location de Voitures de Prestige au Maroc</title>
     <meta name="title" content="Notre Flotte | Prestige Auto - Location de Voitures de Prestige au Maroc">
-    <meta name="description" content="Découvrez notre flotte exclusive de voitures de luxe à Casablanca. SUV, Citadines et Compactes de prestige (Range Rover, Mercedes, Golf, etc.) disponibles à la location.">
-    <meta name="keywords" content="flotte location voiture maroc, louer suv luxe casablanca, location voiture compacte prestige, prestige auto fleet">
+    <meta name="description"
+        content="Découvrez notre flotte exclusive de voitures de luxe à Casablanca. SUV, Citadines et Compactes de prestige (Range Rover, Mercedes, Golf, etc.) disponibles à la location.">
+    <meta name="keywords"
+        content="flotte location voiture maroc, louer suv luxe casablanca, location voiture compacte prestige, prestige auto fleet">
     <meta name="author" content="Prestige Auto">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prestigeauto.ma/vehicule.html">
@@ -18,7 +20,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prestigeauto.ma/vehicule.html">
     <meta property="og:title" content="Notre Flotte de Prestige | Prestige Auto Maroc">
-    <meta property="og:description" content="Explorez notre sélection de véhicules haut de gamme disponibles immédiatement pour vos déplacements au Maroc.">
+    <meta property="og:description"
+        content="Explorez notre sélection de véhicules haut de gamme disponibles immédiatement pour vos déplacements au Maroc.">
     <meta property="og:image" content="https://prestigeauto.ma/imgs/herocover.png">
 
     <!-- Twitter -->
@@ -63,10 +66,12 @@
     }
     </script>
 
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -81,36 +86,30 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
+                        base: '#050505',
+                        surface: '#121212',
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            50: '#f5f0e6',
+                            100: '#e1d0a8',
+                            600: '#D4AF37', // Kept for mapped values
+                            900: '#121212',
                         },
                         accent: {
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
+                            400: '#e1d0a8',
+                            500: '#D4AF37', // Gold Accent
+                            600: '#b08d29',
                         }
                     },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'slide-down': 'slideDown 0.3s ease-out',
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.8) 100%)',
+                        'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
                     },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
+                    backgroundSize: {
+                        'grid': '4rem 4rem',
                     }
                 }
             }
@@ -118,132 +117,139 @@
     </script>
 
     <style>
-        /* Custom Styles */
-        .glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
         }
 
-        /* Gradient Text */
-        .text-gradient {
-            background: linear-gradient(135deg, #2563eb 0%, #f97316 100%);
+        /* Glassmorphism Classes */
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .luxury-glass {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Hover glows */
+        .glow-hover:hover {
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .ghost-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .btn-press:active {
+            transform: scale(0.98);
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide Scrollbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Gold text gradient */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f5d67a 0%, #D4AF37 50%, #b08d29 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        /* Button Press Effect */
-        .btn-press:active {
-            transform: scale(0.95);
-        }
-
-        /* Card Hover Effect */
-        .card-hover {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Smooth Image Zoom */
-        .img-zoom-container {
-            overflow: hidden;
-        }
-
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
-        }
-
-        .card-hover:hover .img-zoom-container img {
-            transform: scale(1.1);
-        }
-
-        /* Fleet Card Animation */
-        .fleet-card {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .fleet-card.hidden {
-            display: none;
-        }
-
-        /* Star Rating */
-        .star-filled {
-            color: #f97316;
-        }
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-brand-600 selection:text-white">
+<body
+    class="font-sans antialiased selection:bg-accent-500 selection:text-base cursor-default overflow-x-hidden pt-28 bg-base">
 
     <!-- ============================================ -->
     <!-- NAVIGATION BAR -->
     <!-- ============================================ -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+
+    <!-- ============================================ -->
+    <!-- HEADER LAYER -->
+    <!-- ============================================ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-nav py-4">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
-                    <div
-                        class="w-10 h-10 flex items-center justify-center text-white group-hover:shadow-brand-600/50 transition-shadow">
-                        <img src="./imgs/icons/prestigeauto_logo.png" alt="Prestige Auto Logo">
-                    </div>
-                    <span class="font-bold text-2xl tracking-tight"><span data-brand-name
-                            class="text-slate-900">Prestige</span><span data-brand-accent
-                            class="text-brand-600">Auto</span></span>
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <span class="font-serif text-2xl tracking-widest text-white uppercase"><span
+                            data-brand-name>Prestige</span> <span data-brand-accent
+                            class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
                 </a>
 
-                <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm lg:text-base">
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-12">
                     <a href="index.html"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Accueil</a>
-                    <a href="vehicule.html" class="text-brand-600 font-medium transition-colors duration-200">Notre
-                        Flotte</a>
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Accueil</a>
+                    <a href="vehicule.html"
+                        class="text-xs uppercase tracking-[0.2em] text-white hover:text-accent-500 transition-colors duration-300">Flotte</a>
                     <a href="index.html#services"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Services</a>
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Services</a>
                     <a href="contact.html"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Contact</a>
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Contact</a>
                 </nav>
 
-                <!-- Contact Button -->
+                <!-- CTA -->
                 <div class="hidden md:block">
                     <a href="reservation.html" data-site-whatsapp
-                        class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 btn-press">
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white hover:text-accent-500 hover:border-accent-500 transition-all duration-300 rounded-none text-xs uppercase tracking-[0.2em] btn-press ghost-glow">
+                        <i class="ph-fill ph-whatsapp-logo text-lg text-[#25D366]"></i>
                         Réserver
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden flex items-center justify-center p-2 text-slate-900 hover:text-brand-600 transition-colors"
-                    aria-label="Ouvrir le menu">
-                    <i class="ph ph-list text-3xl" id="menu-icon"></i>
+                <!-- Mobile Trigger -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent-500 transition-colors">
+                    <i class="ph-light ph-list text-3xl" id="menu-icon"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100">
-            <div class="px-4 py-6 space-y-4">
+            class="hidden absolute top-full left-0 right-0 luxury-glass border-b border-white/10 mt-2">
+            <div class="px-6 py-8 flex flex-col items-center space-y-6">
                 <a href="index.html"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-900 hover:bg-slate-50 hover:text-brand-600 transition-colors">Accueil</a>
-                <a href="vehicule.html" class="block px-3 py-2.5 rounded-lg text-base font-medium text-brand-600">Notre
-                    Flotte</a>
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Accueil</a>
+                <a href="vehicule.html"
+                    class="text-sm uppercase tracking-widest text-white hover:text-accent-500 transition-colors">Flotte</a>
                 <a href="index.html#services"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors">Services</a>
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Services</a>
                 <a href="contact.html"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors">Contact</a>
-                <div class="pt-4 border-t border-slate-100">
-                    <a href="reservation.html" data-site-whatsapp
-                        class="flex items-center justify-center gap-2 w-full py-3 bg-brand-600 text-white rounded-xl font-semibold hover:bg-brand-700 transition-colors">
-                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
-                        Réserver
-                    </a>
-                </div>
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Contact</a>
+                <a href="reservation.html" data-site-whatsapp
+                    class="w-full mt-4 py-4 border border-accent-500 text-accent-500 flex items-center justify-center gap-2 uppercase tracking-widest text-xs hover:bg-accent-500 hover:text-black transition-colors">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                    Réserver
+                </a>
             </div>
         </div>
     </header>
@@ -251,32 +257,42 @@
     <!-- ============================================ -->
     <!-- PAGE HEADER -->
     <!-- ============================================ -->
-    <section class="pt-28 pb-12 bg-gradient-to-br from-brand-50 to-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm">Location de Véhicules de
-                    Prestige</span>
-                <h1 class="mt-3 text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Notre Flotte Exclusive
+    <section class="pt-40 pb-20 bg-base relative overflow-hidden">
+        <!-- Background Imagery -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2000&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-40 grayscale" alt="Luxury Fleet Background">
+            <div class="absolute inset-0 bg-gradient-to-t from-base via-base/80 to-base/40"></div>
+        </div>
+
+        <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-[0.1] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto reveal">
+                <span
+                    class="inline-block text-[10px] uppercase tracking-[0.3em] text-accent-500 mb-6 border-l border-accent-500 pl-4 py-1">La
+                    Sélection Prestige</span>
+                <h1 class="text-5xl lg:text-7xl font-serif text-white tracking-tight leading-tight">
+                    Notre Flotte <br>
+                    <span class="italic font-light text-gray-500">D'Exception.</span>
                 </h1>
-                <p class="mt-4 text-slate-600 text-lg leading-relaxed">Découvrez notre collection soigneusement
-                    sélectionnée de véhicules haut de gamme. Chaque modèle incarne l'excellence automobile pour une
-                    expérience de conduite inoubliable.</p>
+                <p class="mt-8 text-gray-400 text-lg font-light leading-relaxed">Découvrez une galerie de véhicules
+                    extraordinaires, méticuleusement entretenus pour vos moments les plus importants.</p>
             </div>
 
             <!-- Filter Tabs -->
-            <div class="flex justify-center flex-wrap gap-3 mt-10">
+            <div class="flex justify-center flex-wrap gap-4 mt-16 reveal" style="transition-delay: 200ms;">
                 <button
-                    class="fleet-filter active px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-200 bg-brand-600 text-white shadow-lg shadow-brand-600/20"
+                    class="fleet-filter active px-8 py-3 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all duration-300 bg-accent-500 text-black shadow-xl shadow-accent-500/20"
                     data-filter="all">
                     Tous les véhicules
                 </button>
                 <button
-                    class="fleet-filter px-6 py-2.5 rounded-full text-sm font-bold text-slate-600 bg-white border border-slate-200 hover:bg-slate-50 transition-all duration-200"
+                    class="fleet-filter px-8 py-3 rounded-full text-[10px] uppercase tracking-widest font-bold text-gray-400 luxury-glass border border-white/10 hover:border-accent-500/50 hover:text-white transition-all duration-300"
                     data-filter="suv">
                     SUV &amp; 4x4
                 </button>
                 <button
-                    class="fleet-filter px-6 py-2.5 rounded-full text-sm font-bold text-slate-600 bg-white border border-slate-200 hover:bg-slate-50 transition-all duration-200"
+                    class="fleet-filter px-8 py-3 rounded-full text-[10px] uppercase tracking-widest font-bold text-gray-400 luxury-glass border border-white/10 hover:border-accent-500/50 hover:text-white transition-all duration-300"
                     data-filter="compact">
                     Citadines &amp; Compactes
                 </button>
@@ -287,13 +303,13 @@
     <!-- ============================================ -->
     <!-- FLEET GRID -->
     <!-- ============================================ -->
-    <section class="py-16 lg:py-24 bg-slate-50">
+    <section class="py-16 lg:py-24 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Results Count -->
             <div class="mb-8 flex justify-between items-center">
-                <p class="text-slate-500"><span id="results-count">6</span> véhicules disponibles</p>
+                <p class="text-gray-400"><span id="results-count">6</span> véhicules disponibles</p>
                 <select
-                    class="bg-white border border-slate-200 text-slate-700 text-sm rounded-lg px-4 py-2 focus:ring-brand-500 focus:border-brand-500">
+                    class="luxury-glass border border-white/10 text-gray-300 text-sm rounded-lg px-4 py-2 focus:ring-brand-500 focus:border-accent-500">
                     <option>Trier par : Prix croissant</option>
                     <option>Trier par : Prix décroissant</option>
                     <option>Trier par : Popularité</option>
@@ -308,7 +324,7 @@
             <!-- No Results Message -->
             <div id="no-results" class="hidden text-center py-16">
                 <i class="ph ph-car text-6xl text-slate-300 mb-4"></i>
-                <p class="text-slate-500 text-lg">Aucun véhicule ne correspond à cette catégorie.</p>
+                <p class="text-gray-400 text-lg">Aucun véhicule ne correspond à cette catégorie.</p>
             </div>
 
         </div>
@@ -323,7 +339,7 @@
             <p class="text-brand-100 text-lg mb-8">Contactez notre service de conciergerie pour une demande spécifique
                 ou un véhicule sur mesure.</p>
             <a href="contact.html"
-                class="inline-flex items-center px-8 py-4 bg-white text-brand-600 font-bold rounded-full hover:bg-brand-50 transition-all duration-200 shadow-lg hover:shadow-xl">
+                class="inline-flex items-center px-8 py-4 luxury-glass text-brand-600 font-bold rounded-full hover:bg-brand-50 transition-all duration-200 shadow-lg hover:shadow-xl">
                 Nous contacter <i class="ph-bold ph-arrow-right ml-2"></i>
             </a>
         </div>
@@ -332,162 +348,89 @@
     <!-- ============================================ -->
     <!-- FOOTER -->
     <!-- ============================================ -->
-    <footer class="bg-slate-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-12">
-                <div class="lg:col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-6">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center text-white group-hover:shadow-brand-600/50 transition-shadow">
-                            <img src="./imgs/icons/prestigeauto_logo.png" alt="Prestige Auto Logo">
-                        </div>
-                        <span class="font-bold text-2xl tracking-tight"><span class="text-white"
-                                data-brand-name>Prestige</span><span class="text-brand-500"
-                                data-brand-accent>Auto</span></span>
+
+    <!-- ============================================ -->
+    <!-- FOOTER LAYER -->
+    <!-- ============================================ -->
+    <footer class="border-t border-white/10 bg-base pt-24 pb-12 mt-20">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+                <!-- Branding -->
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="inline-block mb-8">
+                        <span class="font-serif text-3xl tracking-widest text-white uppercase"><span
+                                data-brand-name>Prestige</span> <span data-brand-accent
+                                class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
                     </a>
-                    <p class="text-slate-400 leading-relaxed mb-6" data-brand-tagline>Votre partenaire de confiance pour
-                        la location de
-                        véhicules de prestige au Maroc.</p>
-                    <div class="flex gap-4">
-                        <a href="#" data-social-facebook
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200">
-                            <i class="ph-fill ph-facebook-logo text-xl"></i>
-                        </a>
-                        <a href="#" data-social-instagram
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200">
-                            <i class="ph-fill ph-instagram-logo text-xl"></i>
-                        </a>
-                        <a href="#" data-social-linkedin
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200">
-                            <i class="ph-fill ph-linkedin-logo text-xl"></i>
-                        </a>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm" data-brand-tagline>
+                        La référence de la location de véhicules d'exception au Maroc. L'élégance en mouvement.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#" data-social-facebook class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="Facebook"><i class="ph-light ph-facebook-logo text-2xl"></i></a>
+                        <a href="#" data-social-instagram class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="Instagram"><i class="ph-light ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" data-social-linkedin class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="LinkedIn"><i class="ph-light ph-linkedin-logo text-2xl"></i></a>
                     </div>
                 </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Liens Rapides</h4>
-                    <ul class="space-y-3">
+
+                <!-- Navigation -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Navigation</h4>
+                    <ul class="space-y-4">
                         <li><a href="index.html"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Accueil</a>
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Accueil</a>
                         </li>
-                        <li><a href="vehicles.html"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Notre
-                                Flotte</a></li>
+                        <li><a href="vehicule.html"
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">La
+                                Collection</a></li>
                         <li><a href="index.html#services"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Services</a>
-                        </li>
-                        <li><a href="index.html#testimonials"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Témoignages</a>
-                        </li>
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Nos
+                                Services</a></li>
+                        <li><a href="contact.html"
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Contact
+                                Réservation</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Contactez-nous</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="ph-fill ph-map-pin text-brand-500 text-xl mt-0.5"></i>
-                            <span class="text-slate-400" data-site-address-full>Boulevard d'Anfa<br>Casablanca,
-                                Maroc</span>
+
+                <!-- Contact -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Information</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <i class="ph-light ph-map-pin text-accent-500 text-xl mt-0.5"></i>
+                            <span class="text-gray-400 text-sm font-light" data-site-address-full>Boulevard
+                                d'Anfa<br>Casablanca, Maroc</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-fill ph-phone text-brand-500 text-xl"></i>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-phone text-accent-500 text-xl"></i>
                             <a href="tel:212713440903" data-site-phone
-                                class="text-slate-400 hover:text-brand-500 transition-colors">+212 7
+                                class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">+212 7
                                 13 44 09 03</a>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-fill ph-envelope text-brand-500 text-xl"></i>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-envelope text-accent-500 text-xl"></i>
                             <a href="mailto:prestigeauto@gmail.com" data-site-email
-                                class="text-slate-400 hover:text-brand-500 transition-colors">prestigeauto@gmail.com</a>
+                                class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">prestigeauto@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-500 text-sm">&copy; <span id="currentYear">2024</span> <span
-                        data-brand-name>Prestige</span> <span data-brand-accent>Auto</span>. Tous droits réservés.</p>
-                <div class="flex gap-6 text-sm">
-                    <a href="privacy.html" class="text-slate-500 hover:text-brand-500">Politique de Confidentialité</a>
-                    <a href="terms.html" class="text-slate-500 hover:text-brand-500">Conditions Générales</a>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5">
+                <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 Prestige Auto. Tous droits
+                    réservés.</p>
+                <div class="flex gap-8">
+                    <a href="privacy.html"
+                        class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Confidentialité</a>
+                    <a href="terms.html"
+                        class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Conditions</a>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- ============================================ -->
-    <!-- JAVASCRIPT -->
-    <!-- ============================================ -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
-        // Mobile Menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        let isMenuOpen = false;
-
-        function toggleMobileMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.classList.remove('ph-list');
-                menuIcon.classList.add('ph-x');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.classList.remove('ph-x');
-                menuIcon.classList.add('ph-list');
-            }
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
-        // Fleet Filtering
-        // Wait a slight bit for main.js to render cards before grabbing them for filtering logic
-        setTimeout(() => {
-            const fleetCards = document.querySelectorAll('.fleet-card');
-            const noResults = document.getElementById('no-results');
-            const resultsCount = document.getElementById('results-count');
-
-            function filterFleet(filter) {
-                let visibleCount = 0;
-
-                fleetCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-
-                    if (filter === 'all' || category === filter) {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-
-                resultsCount.textContent = visibleCount;
-
-                if (visibleCount === 0) {
-                    noResults.classList.remove('hidden');
-                } else {
-                    noResults.classList.add('hidden');
-                }
-            }
-
-            fleetFilters.forEach(filter => {
-                filter.addEventListener('click', () => {
-                    const filterValue = filter.getAttribute('data-filter');
-                    updateActiveFilter(filter);
-                    filterFleet(filterValue);
-                });
-            });
-        }, 100);
-
-        // Button Press Effect
-        document.querySelectorAll('.btn-press').forEach(button => {
-            button.addEventListener('click', function () {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => { this.style.transform = ''; }, 150);
-            });
-        });
-    </script>
-
-    <!-- JS Data and Main Scripts -->
+    <!-- Scripts Core -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 
@@ -496,6 +439,7 @@
         class="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group">
         <i class="ph-fill ph-whatsapp-logo text-4xl"></i>
     </a>
+    <!-- Scripts End -->
 </body>
 
 </html>

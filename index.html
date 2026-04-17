@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth bg-[#050505]">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Primary Meta Tags -->
     <title>Prestige Auto | Location de Véhicules de Luxe à Casablanca, Maroc</title>
     <meta name="title" content="Prestige Auto | Location de Véhicules de Luxe à Casablanca, Maroc">
-    <meta name="description" content="Louez les meilleurs véhicules de luxe et prestige au Maroc avec Prestige Auto. Service premium, flotte exclusive (SUV, Compactes) et assistance 24/7 à Casablanca. Réservez dès maintenant !">
-    <meta name="keywords" content="location voiture luxe maroc, location voiture prestige casablanca, prestige auto, location suv luxe maroc, location voiture haut de gamme casablanca">
+    <meta name="description"
+        content="Louez les meilleurs véhicules de luxe et prestige au Maroc avec Prestige Auto. Service premium, flotte exclusive (SUV, Compactes) et assistance 24/7 à Casablanca. Réservez dès maintenant !">
+    <meta name="keywords"
+        content="location voiture luxe maroc, location voiture prestige casablanca, prestige auto, location suv luxe maroc, location voiture haut de gamme casablanca">
     <meta name="author" content="Prestige Auto">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://prestigeauto.ma/">
@@ -18,7 +20,8 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://prestigeauto.ma/">
     <meta property="og:title" content="Prestige Auto | Location de Véhicules de Luxe au Maroc">
-    <meta property="og:description" content="Découvrez une expérience de conduite inégalée avec notre sélection exclusive de véhicules de prestige. Location haut de gamme à Casablanca.">
+    <meta property="og:description"
+        content="Découvrez une expérience de conduite inégalée avec notre sélection exclusive de véhicules de prestige. Location haut de gamme à Casablanca.">
     <meta property="og:image" content="https://prestigeauto.ma/imgs/herocover.png">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Prestige Auto">
@@ -27,7 +30,8 @@
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://prestigeauto.ma/">
     <meta property="twitter:title" content="Prestige Auto | Location de Véhicules de Luxe au Maroc">
-    <meta property="twitter:description" content="Louez les meilleurs véhicules de luxe et prestige au Maroc avec Prestige Auto. Service premium et flotte exclusive.">
+    <meta property="twitter:description"
+        content="Louez les meilleurs véhicules de luxe et prestige au Maroc avec Prestige Auto. Service premium et flotte exclusive.">
     <meta property="twitter:image" content="https://prestigeauto.ma/imgs/herocover.png">
 
     <!-- Favicon -->
@@ -77,9 +81,10 @@
     </script>
 
     <!-- Google Fonts -->
-    <link rel=" preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -94,36 +99,30 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
+                        base: '#050505',
+                        surface: '#121212',
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            50: '#f5f0e6',
+                            100: '#e1d0a8',
+                            600: '#D4AF37', // Kept for mapped values
+                            900: '#121212',
                         },
                         accent: {
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
+                            400: '#e1d0a8',
+                            500: '#D4AF37', // Gold Accent
+                            600: '#b08d29',
                         }
                     },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out',
-                        'slide-down': 'slideDown 0.3s ease-out',
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(to top, rgba(5,5,5,1) 0%, rgba(5,5,5,0.4) 50%, rgba(5,5,5,0.8) 100%)',
+                        'grid-pattern': 'linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
                     },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        slideDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
+                    backgroundSize: {
+                        'grid': '4rem 4rem',
                     }
                 }
             }
@@ -131,223 +130,55 @@
     </script>
 
     <style>
-        /* Custom Styles */
-        .glass {
-            background: rgba(255, 255, 255, 0.85);
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .luxury-glass {
+            background: rgba(18, 18, 18, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        /* Gradient Text */
-        .text-gradient {
-            background: linear-gradient(135deg, #2563eb 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Custom Focus Ring */
-        .focus-ring:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
-        }
-
-        /* Button Press Effect */
-        .btn-press:active {
-            transform: scale(0.95);
-        }
-
-        /* Card Hover Effect */
-        .card-hover {
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card-hover:hover {
+        /* Hover glows */
+        .glow-hover:hover {
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15);
+            border-color: rgba(212, 175, 55, 0.3);
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        /* Smooth Image Zoom */
-        .img-zoom-container {
-            overflow: hidden;
+        .ghost-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.1);
         }
 
-        .img-zoom-container img {
-            transition: transform 0.5s ease;
+        .btn-press:active {
+            transform: scale(0.98);
         }
 
-        .card-hover:hover .img-zoom-container img {
-            transform: scale(1.1);
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* Star Rating */
-        .star-filled {
-            color: #f97316;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Highlight Shadow */
-        .hover\:shadow-cyan:hover {
-            box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.4);
-        }
-    </style>
-</head>
-
-<body class="bg-slate-50 text-slate-600 font-sans antialiased selection:bg-brand-600 selection:text-white">
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
-                    <div
-                        class="w-10 h-10 flex items-center justify-center text-white group-hover:shadow-brand-600/50 transition-shadow">
-                        <img src="./imgs/icons/prestigeauto_logo.png" alt="Prestige Auto Logo">
-                    </div>
-                    <span class="font-bold text-2xl tracking-tight"><span data-brand-name
-                            class="text-slate-900">Prestige</span><span data-brand-accent
-                            class="text-brand-600">Auto</span></span>
-                </a>
-
-                <nav class="hidden md:flex items-center space-x-8 text-sm lg:text-base">
-                    <a href="index.html"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Accueil</a>
-                    <a href="vehicule.html"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Notre
-                        Flotte</a>
-                    <a href="index.html#services"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Services</a>
-                    <a href="contact.html"
-                        class="text-slate-600 hover:text-brand-600 font-medium transition-colors duration-200">Contact</a>
-                </nav>
-
-                <!-- Contact Button -->
-                <div class="hidden md:block">
-                    <a href="reservation.html" data-site-whatsapp
-                        class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2 btn-press">
-                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
-                        Réserver
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden flex items-center justify-center p-2 text-slate-900 hover:text-brand-600 transition-colors"
-                    aria-label="Ouvrir le menu">
-                    <i class="ph ph-list text-3xl" id="menu-icon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu"
-            class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100">
-            <div class="px-4 py-6 space-y-4">
-                <a href="index.html"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-900 hover:bg-slate-50 hover:text-brand-600 transition-colors">Accueil</a>
-                <a href="vehicule.html"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors">Notre
-                    Flotte</a>
-                <a href="index.html#services"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors">Services</a>
-                <a href="contact.html"
-                    class="block px-3 py-2.5 rounded-lg text-base font-medium text-slate-600 hover:bg-slate-50 hover:text-brand-600 transition-colors">Contact</a>
-                <div class="pt-4 border-t border-slate-100">
-                    <a href="reservation.html" data-site-whatsapp
-                        class="flex items-center justify-center gap-2 w-full py-3 bg-brand-600 text-white rounded-xl font-semibold hover:bg-brand-700 transition-colors">
-                        <i class="ph-fill ph-whatsapp-logo text-xl"></i>
-                        Réserver
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="home" class="relative pt-28 pb-16 lg:pt-36 lg:pb-32 overflow-hidden">
-        <!-- Background Decorations -->
-        <div
-            class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-gradient-to-bl from-brand-50 via-transparent to-transparent">
-        </div>
-        <div class="absolute top-20 -right-20 w-96 h-96 bg-brand-600/5 rounded-full blur-3xl"></div>
-
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- Text Content -->
-                <div class="space-y-8 animate-fade-in-up">
-                    <!-- Overline Badge -->
-                    <div
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-sm font-semibold">
-                        <i class="ph-fill ph-star"></i>
-                        <span data-t="hero.overline"> Excellence Automobile depuis 2010</span>
-                    </div>
-
-                    <!-- Headline -->
-                    <h1 class="text-5xl lg:text-5xl font-extrabold text-slate-900 leading-[1.1] tracking-tight"
-                        data-t="hero.title">
-                        Conduisez l'Excellence <br>
-                        avec <span class="text-gradient"><span data-brand-name>Prestige</span> <span
-                                data-brand-accent>Auto</span>.</span>
-                    </h1>
-
-                    <!-- Subtitle -->
-                    <p class="text-lg text-slate-600 max-w-lg leading-relaxed" data-t="hero.subtitle">
-                        Découvrez une expérience de conduite inégalée avec notre sélection exclusive de véhicules de
-                        prestige. Location haut de gamme avec service personnalisé et accompagnement dédié.
-                    </p>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                        <a href="vehicule.html"
-                            class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-white bg-brand-600 rounded-full hover:bg-brand-700 transition-all duration-200 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 hover:-translate-y-0.5 btn-press">
-                            <span data-t="hero.discover">Découvrir la flotte</span> <i
-                                class="ph-bold ph-arrow-right ml-2"></i>
-                        </a>
-                        <a href="index.html#services"
-                            class="inline-flex justify-center items-center px-8 py-4 text-base font-semibold text-slate-700 bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all duration-200 hover:-translate-y-0.5 btn-press"
-                            data-t="hero.services">
-                            Nos services
-                        </a>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200">
-                        <div>
-                            <p class="text-3xl lg:text-4xl font-bold text-slate-900">50+</p>
-                            <p class="text-sm text-slate-500 font-medium mt-1" data-t="hero.stats.models">Modèles
-                                Exclusive</p>
-                        </div>
-                        <div>
-                            <p class="text-3xl lg:text-4xl font-bold text-slate-900">24/7</p>
-                            <p class="text-sm text-slate-500 font-medium mt-1" data-t="hero.stats.concierge">Service
-                                Conciergerie</p>
-                        </div>
-                        <div>
-                            <p class="text-3xl lg:text-4xl font-bold text-slate-900">15k+</p>
-                            <p class="text-sm text-slate-500 font-medium mt-1" data-t="hero.stats.clients">Clients
-                                Satisfaits</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Image -->
-                <div class="relative lg:h-[600px] flex items-center justify-center">
-                    <div class="absolute inset-0 bg-brand-600/5 blur-3xl rounded-full"></div>
-                    <img src="./imgs/herocover.png" alt="Véhicule de Luxe - Prestige Auto"
-                        class="relative z-10 w-full max-w-lg lg:max-w-none object-contain drop-shadow-2xl transform hover:scale-105 transition duration-700 ease-out">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND MARQUEE -->
-    <style>
+        /* Marquee Animation */
         @keyframes marquee-scroll {
             0% {
                 transform: translateX(0);
@@ -361,1242 +192,509 @@
         .marquee-track {
             display: flex;
             width: max-content;
-            animation: marquee-scroll 30s linear infinite;
+            animation: marquee-scroll 40s linear infinite;
         }
 
         .marquee-track:hover {
             animation-play-state: paused;
         }
+
+        /* Hide Scrollbar */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Gold text gradient */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #f5d67a 0%, #D4AF37 50%, #b08d29 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
     </style>
+</head>
 
-    <div class="relative py-10 bg-white border-y border-slate-100 overflow-hidden">
-        <!-- Fade overlays -->
+<body class="font-sans antialiased selection:bg-accent-500 selection:text-base cursor-default overflow-x-hidden">
+
+    <!-- ============================================ -->
+    <!-- HEADER LAYER -->
+    <!-- ============================================ -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 cursor-pointer group">
+                    <span class="font-serif text-2xl tracking-widest text-white uppercase"><span
+                            data-brand-name>Prestige</span> <span data-brand-accent
+                            class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-12">
+                    <a href="index.html"
+                        class="text-xs uppercase tracking-[0.2em] text-white hover:text-accent-500 transition-colors duration-300">Accueil</a>
+                    <a href="vehicule.html"
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Flotte</a>
+                    <a href="#services"
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Services</a>
+                    <a href="contact.html"
+                        class="text-xs uppercase tracking-[0.2em] text-gray-400 hover:text-accent-500 transition-colors duration-300">Contact</a>
+                </nav>
+
+                <!-- CTA -->
+                <div class="hidden md:block">
+                    <a href="reservation.html" data-site-whatsapp
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/20 text-white hover:text-accent-500 hover:border-accent-500 transition-all duration-300 rounded-none text-xs uppercase tracking-[0.2em] btn-press ghost-glow">
+                        <i class="ph-fill ph-whatsapp-logo text-lg text-[#25D366]"></i>
+                        Réserver
+                    </a>
+                </div>
+
+                <!-- Mobile Trigger -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-accent-500 transition-colors">
+                    <i class="ph-light ph-list text-3xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 right-0 luxury-glass border-b border-white/10 mt-2">
+            <div class="px-6 py-8 flex flex-col items-center space-y-6">
+                <a href="index.html"
+                    class="text-sm uppercase tracking-widest text-white hover:text-accent-500 transition-colors">Accueil</a>
+                <a href="vehicule.html"
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Flotte</a>
+                <a href="#services"
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Services</a>
+                <a href="contact.html"
+                    class="text-sm uppercase tracking-widest text-gray-400 hover:text-accent-500 transition-colors">Contact</a>
+                <a href="reservation.html" data-site-whatsapp
+                    class="w-full mt-4 py-4 border border-accent-500 text-accent-500 flex items-center justify-center gap-2 uppercase tracking-widest text-xs hover:bg-accent-500 hover:text-black transition-colors">
+                    <i class="ph-fill ph-whatsapp-logo text-lg"></i>
+                    Réserver
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- HERO LAYER -->
+    <!-- ============================================ -->
+    <section id="home" class="relative h-screen w-full flex items-center overflow-hidden bg-black">
+        <div class="absolute inset-0 z-0">
+            <img src="./imgs/herocover.png" alt="Prestige Auto Luxury Car"
+                class="absolute inset-0 w-full h-full object-cover object-center scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-80">
+            </div>
+        </div>
+
+        <div class="relative z-20 container mx-auto px-6 md:px-12 w-full mt-24">
+            <div class="max-w-4xl">
+                <div class="reveal">
+                    <span
+                        class="inline-block text-[10px] uppercase tracking-[0.5em] text-accent-500 mb-6 border-l-2 border-accent-500 pl-4 py-1 leading-none">
+                        Excellence Automobile
+                    </span>
+                </div>
+
+                <h1 class="text-6xl md:text-8xl lg:text-[7.5rem] leading-[0.9] text-white reveal"
+                    style="transition-delay: 100ms;">
+                    <span class="font-sans font-extralight block tracking-tighter opacity-90">Conduisez l'</span>
+                    <span class="font-serif italic text-accent-500 block mt-2 md:mt-4">Excellence.</span>
+                </h1>
+
+                <p class="mt-8 md:mt-12 text-lg text-gray-300 font-light max-w-lg leading-relaxed reveal opacity-80"
+                    style="transition-delay: 200ms;">
+                    Découvrez une galerie de véhicules extraordinaires. <br class="hidden md:block">
+                    Prestige Auto redéfinit la location de luxe au Maroc.
+                </p>
+
+                <div class="mt-14 reveal" style="transition-delay: 300ms;">
+                    <a href="vehicule.html"
+                        class="group relative inline-flex items-center justify-center px-10 py-5 border border-accent-500/50 text-accent-500 hover:text-black overflow-hidden transition-all duration-500 text-xs uppercase tracking-[0.3em] bg-black/20 backdrop-blur-sm">
+                        <span
+                            class="absolute inset-0 bg-accent-500 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></span>
+                        <span class="relative z-10">Explorer la Collection</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div
-            class="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-40 bg-gradient-to-r from-white to-transparent z-20">
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-4 reveal opacity-40">
+            <span
+                class="text-[9px] uppercase tracking-[0.4em] text-white [writing-mode:vertical-lr] rotate-180">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-accent-500 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- LOGO CAROUSEL LAYER -->
+    <!-- ============================================ -->
+    <div
+        class="py-12 border-y border-white/5 bg-surface/30 backdrop-blur-md relative overflow-hidden flex items-center">
+        <div
+            class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-base to-transparent z-10 pointer-events-none">
         </div>
         <div
-            class="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-40 bg-gradient-to-l from-white to-transparent z-20">
+            class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-base to-transparent z-10 pointer-events-none">
         </div>
 
-        <div class="marquee-track gap-5 px-4">
-            <!-- === SET 1 === -->
-            <!-- Mercedes -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 200 60"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="26" fill="none" stroke="#222" stroke-width="3" />
-                    <path d="M30 4 L30 30 L8 43" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" />
-                    <path d="M30 4 L30 30 L52 43" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" />
-                    <text x="68" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#111"
-                        letter-spacing="1">MERCEDES</text>
-                </svg>
-            </a>
-            <!-- BMW -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/bmw/1C69D4" alt="BMW"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <!-- Audi -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-8 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 200 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="62" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="97" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="132" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                </svg>
-            </a>
-            <!-- Volkswagen -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/volkswagen/001E50" alt="Volkswagen"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <!-- Toyota -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/toyota/EB0A1E" alt="Toyota"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <!-- Ford -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 160 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="75" cy="27" rx="70" ry="24" fill="#003da5" />
-                    <text x="75" y="34" font-family="Arial,sans-serif" font-style="italic" font-weight="900"
-                        font-size="28" fill="white" text-anchor="middle" letter-spacing="1">Ford</text>
-                </svg>
-            </a>
-            <!-- Porsche -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/porsche/8B1A1A" alt="Porsche"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <!-- Renault -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 180 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="27,5 38,27 27,49 16,27" fill="#efb300" />
-                    <polygon points="27,12 36,27 27,42 18,27" fill="white" />
-                    <text x="52" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="19" fill="#111"
-                        letter-spacing="1">RENAULT</text>
-                </svg>
-            </a>
-            <!-- Dacia -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 150 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 12 L10 42 L25 42 C38 42 46 35 46 27 C46 19 38 12 25 12 Z" fill="none" stroke="#00539f"
-                        stroke-width="4" />
-                    <text x="55" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#111"
-                        letter-spacing="2">DACIA</text>
-                </svg>
-            </a>
-            <!-- Hyundai -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/hyundai/002C5F" alt="Hyundai"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <!-- Kia -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 100 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <text x="10" y="40" font-family="Arial,sans-serif" font-weight="900" font-size="36" fill="#bb162b"
-                        letter-spacing="-1">KIA</text>
-                </svg>
-            </a>
+        <div class="marquee-track flex gap-16 px-8 items-center h-16">
+            <img src="https://cdn.simpleicons.org/astonmartin/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Aston Martin">
+            <img src="https://cdn.simpleicons.org/bmw/FFFFFF"
+                class="h-10 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="BMW">
+            <img src="https://cdn.simpleicons.org/audi/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Audi">
+            <img src="https://cdn.simpleicons.org/volkswagen/FFFFFF"
+                class="h-10 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="VW">
+            <img src="https://cdn.simpleicons.org/porsche/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Porsche">
+            <img src="https://cdn.simpleicons.org/bentley/FFFFFF"
+                class="h-7 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Bentley">
 
-            <!-- === SET 2 (duplicate for loop) === -->
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 200 60"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="26" fill="none" stroke="#222" stroke-width="3" />
-                    <path d="M30 4 L30 30 L8 43" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" />
-                    <path d="M30 4 L30 30 L52 43" fill="none" stroke="#222" stroke-width="3" stroke-linejoin="round" />
-                    <text x="68" y="38" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#111"
-                        letter-spacing="1">MERCEDES</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/bmw/1C69D4" alt="BMW"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-8 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 200 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="62" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="97" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                    <circle cx="132" cy="27" r="23" fill="none" stroke="#bb0a30" stroke-width="4" />
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 60 60"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="30" cy="30" r="27" fill="#001e50" />
-                    <path d="M16 22 L24 38 L30 26 L36 38 L44 22" fill="none" stroke="white" stroke-width="3"
-                        stroke-linejoin="round" />
-                    <line x1="13" y1="22" x2="47" y2="22" stroke="white" stroke-width="2" opacity="0.4" />
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <img src="https://cdn.simpleicons.org/toyota/EB0A1E" alt="Toyota"
-                    class="h-10 w-auto opacity-60 group-hover:opacity-100 transition-opacity object-contain">
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 160 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="75" cy="27" rx="70" ry="24" fill="#003da5" />
-                    <text x="75" y="34" font-family="Arial,sans-serif" font-style="italic" font-weight="900"
-                        font-size="28" fill="white" text-anchor="middle" letter-spacing="1">Ford</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 180 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="5" width="45" height="45" rx="4" fill="none" stroke="#8b1a1a" stroke-width="3" />
-                    <line x1="2" y1="27" x2="47" y2="27" stroke="#8b1a1a" stroke-width="2" />
-                    <line x1="24" y1="5" x2="24" y2="52" stroke="#8b1a1a" stroke-width="2" />
-                    <text x="58" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#111"
-                        letter-spacing="2">PORSCHE</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 180 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="27,5 38,27 27,49 16,27" fill="#efb300" />
-                    <polygon points="27,12 36,27 27,42 18,27" fill="white" />
-                    <text x="52" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="19" fill="#111"
-                        letter-spacing="1">RENAULT</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 150 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 12 L10 42 L25 42 C38 42 46 35 46 27 C46 19 38 12 25 12 Z" fill="none" stroke="#00539f"
-                        stroke-width="4" />
-                    <text x="55" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="20" fill="#111"
-                        letter-spacing="2">DACIA</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 180 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="27" cy="27" rx="24" ry="18" fill="none" stroke="#002c5f" stroke-width="3" />
-                    <text x="18" y="33" font-family="Arial,sans-serif" font-weight="900" font-size="22" fill="#002c5f"
-                        text-anchor="middle">H</text>
-                    <text x="58" y="37" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#111"
-                        letter-spacing="1">HYUNDAI</text>
-                </svg>
-            </a>
-            <a href="vehicule.html"
-                class="brand-card group flex-shrink-0 flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-5 shadow-sm hover:shadow-lg hover:border-brand-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                style="margin-right:20px">
-                <svg class="h-9 w-auto opacity-60 group-hover:opacity-100 transition-opacity" viewBox="0 0 100 55"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <text x="10" y="40" font-family="Arial,sans-serif" font-weight="900" font-size="36" fill="#bb162b"
-                        letter-spacing="-1">KIA</text>
-                </svg>
-            </a>
+            <img src="https://cdn.simpleicons.org/astonmartin/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Aston Martin">
+            <img src="https://cdn.simpleicons.org/bmw/FFFFFF"
+                class="h-10 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="BMW">
+            <img src="https://cdn.simpleicons.org/audi/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Audi">
+            <img src="https://cdn.simpleicons.org/volkswagen/FFFFFF"
+                class="h-10 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="VW">
+            <img src="https://cdn.simpleicons.org/porsche/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Porsche">
+            <img src="https://cdn.simpleicons.org/bentley/FFFFFF"
+                class="h-7 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Bentley">
+
+            <img src="https://cdn.simpleicons.org/astonmartin/FFFFFF"
+                class="h-8 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="Aston Martin">
+            <img src="https://cdn.simpleicons.org/bmw/FFFFFF"
+                class="h-10 w-auto filter grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:drop-shadow-[0_0_12px_rgba(212,175,55,0.6)] transition-all duration-500"
+                alt="BMW">
         </div>
     </div>
 
     <!-- ============================================ -->
-    <!-- FEATURED FLEET SECTION -->
+    <!-- FLEET GALLERY LAYER -->
     <!-- ============================================ -->
-    <section id="fleet" class="py-24 lg:py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm"
-                    data-t="fleet.overline">Sélection Exclusive</span>
-                <h2 class="mt-3 text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight" data-t="fleet.title">Nos
-                    Véhicules de Prestige
-                </h2>
-                <p class="mt-4 text-slate-600 text-lg leading-relaxed" data-t="fleet.subtitle">Explorez notre collection
-                    soigneusement
-                    sélectionnée de véhicules haut de gamme, alliant performances exceptionelles et confort absolu.</p>
+    <section id="fleet" class="py-32 relative">
+        <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-[0.2] pointer-events-none"></div>
+
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl reveal">
+                    <span class="inline-block text-[10px] uppercase tracking-[0.3em] text-accent-500 mb-4">Notre
+                        Collection</span>
+                    <h2 class="text-4xl md:text-6xl font-serif text-white tracking-tight leading-tight">
+                        La Signature <br>
+                        <span class="italic font-light text-gray-500">du Prestige.</span>
+                    </h2>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <a href="vehicule.html"
+                        class="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-white hover:text-accent-500 transition-colors group">
+                        Voir la galerie complète
+                        <i
+                            class="ph-light ph-arrow-right text-lg transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="featured-fleet-grid">
-                <!-- Cars dynamically loaded here from JS -->
-            </div>
-
-            <!-- View All Link -->
-            <div class="text-center">
-                <a href="vehicule.html"
-                    class="inline-flex items-center text-brand-600 font-bold hover:text-brand-700 transition-colors duration-200">
-                    <span data-t="fleet.view_all">Voir toute la flotte</span> <i
-                        class="ph-bold ph-arrow-right ml-2"></i>
-                </a>
+            <!-- Dynamic grid populated by JS -->
+            <!-- Columns collapse from 3 to 1 while maintaining spacious gaps -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10" id="featured-fleet-grid">
+                <!-- Cars dynamically loaded here from JS (Render format updated in main.js) -->
             </div>
         </div>
     </section>
 
     <!-- ============================================ -->
-    <!-- SERVICES SECTION -->
+    <!-- FEATURES LAYER -->
     <!-- ============================================ -->
-    <section id="services" class="py-24 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5"
-            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+    <section id="services" class="py-32 bg-surface relative border-y border-white/5 overflow-hidden">
+        <!-- Background Imagery -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-30" alt="Luxury Car Interior">
+            <!-- Gradient Overlay for Contrast -->
+            <div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/90 to-surface"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Section Header -->
-            <div class="text-center mb-16 lg:mb-20">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm">Services Exclusifs</span>
-                <h2 class="mt-3 text-4xl lg:text-5xl font-bold tracking-tight">Une Expérience Sur Mesure</h2>
-                <p class="mt-4 text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Nous comprenons que chaque
-                    client est unique. C'est pourquoi nous proposons des services personnalisés pour répondre à vos
-                    attentes les plus élevées.</p>
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-24 reveal">
+                <div class="h-10 w-[1px] bg-accent-500 mx-auto mb-8"></div>
+                <h2 class="text-3xl md:text-5xl font-serif text-white mb-6">Un Service Haute Couture</h2>
+                <p class="text-gray-400 font-light text-lg">Chaque interaction avec Prestige Auto est minutieusement
+                    pensée pour dépasser vos attentes.</p>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid md:grid-cols-3 gap-12">
+            <div class="grid md:grid-cols-3 gap-16 md:gap-12">
                 <!-- Service 1 -->
-                <div class="text-center">
+                <div class="flex flex-col items-center text-center reveal" style="transition-delay: 100ms;">
                     <div
-                        class="w-20 h-20 mx-auto bg-slate-800 rounded-3xl flex items-center justify-center mb-6 hover:bg-brand-600 transition-all duration-300">
-                        <i class="ph-fill ph-car text-4xl"></i>
+                        class="w-20 h-20 rounded-full border border-white/10 flex items-center justify-center mb-8 relative group">
+                        <div
+                            class="absolute inset-0 bg-accent-500/10 rounded-full blur-xl scale-0 group-hover:scale-150 transition-transform duration-700 opacity-0 group-hover:opacity-100">
+                        </div>
+                        <i class="ph-light ph-key text-4xl text-accent-500 relative z-10"></i>
                     </div>
-                    <h3 class="text-xl lg:text-2xl font-bold mb-3">Livraison Personnalisée</h3>
-                    <p class="text-slate-400 leading-relaxed">Livraison et reprise de votre véhicule à l'adresse de
-                        votre choix : domicile, hôtel, aéroport.</p>
+                    <h3 class="text-xl font-serif text-white mb-4">Conciergerie Privée</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">Livraison personnalisée de votre
+                        véhicule à votre aéroport, hôtel ou résidence d'exception, à l'heure précise de votre choix.</p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="text-center">
+                <div class="flex flex-col items-center text-center reveal" style="transition-delay: 300ms;">
                     <div
-                        class="w-20 h-20 mx-auto bg-slate-800 rounded-3xl flex items-center justify-center mb-6 hover:bg-brand-600 transition-all duration-300">
-                        <i class="ph-fill ph-steering-wheel text-4xl"></i>
+                        class="w-20 h-20 rounded-full border border-white/10 flex items-center justify-center mb-8 relative group">
+                        <div
+                            class="absolute inset-0 bg-accent-500/10 rounded-full blur-xl scale-0 group-hover:scale-150 transition-transform duration-700 opacity-0 group-hover:opacity-100">
+                        </div>
+                        <i class="ph-light ph-shield-check text-4xl text-accent-500 relative z-10"></i>
                     </div>
-                    <h3 class="text-xl lg:text-2xl font-bold mb-3">Service Chauffeur</h3>
-                    <p class="text-slate-400 leading-relaxed">Profitez d'un chauffeur professionnel pour vos
-                        déplacements ou événements spéciaux.</p>
+                    <h3 class="text-xl font-serif text-white mb-4">Sérénité Absolue</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">Assurance premium exhaustive, véhicules
+                        méticuleusement inspectés et assistance technique dédiée 24h/24 et 7j/7.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="text-center">
+                <div class="flex flex-col items-center text-center reveal" style="transition-delay: 500ms;">
                     <div
-                        class="w-20 h-20 mx-auto bg-slate-800 rounded-3xl flex items-center justify-center mb-6 hover:bg-brand-600 transition-all duration-300">
-                        <i class="ph-fill ph-shield-check text-4xl"></i>
+                        class="w-20 h-20 rounded-full border border-white/10 flex items-center justify-center mb-8 relative group">
+                        <div
+                            class="absolute inset-0 bg-accent-500/10 rounded-full blur-xl scale-0 group-hover:scale-150 transition-transform duration-700 opacity-0 group-hover:opacity-100">
+                        </div>
+                        <i class="ph-light ph-crown text-4xl text-accent-500 relative z-10"></i>
                     </div>
-                    <h3 class="text-xl lg:text-2xl font-bold mb-3">Assurance Premium</h3>
-                    <p class="text-slate-400 leading-relaxed">Couverture complète incluse avec assistance rapatriement
-                        24h/24 et 7j/7.</p>
+                    <h3 class="text-xl font-serif text-white mb-4">Expérience Sur-Mesure</h3>
+                    <p class="text-sm text-gray-500 font-light leading-relaxed">Configurez votre location selon vos
+                        désirs. Services de chauffeurs, équipements supplémentaires et anonymat garanti.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================ -->
-    <!-- WHY CHOOSE US SECTION -->
+    <!-- TESTIMONIALS LAYER -->
     <!-- ============================================ -->
-    <section class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm">Pourquoi Nous Choisir</span>
-                <h2 class="mt-3 text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">L'Excellence à Chaque
-                    Étape</h2>
-                <p class="mt-4 text-slate-600 text-lg leading-relaxed">Notre engagement envers la qualité et la
-                    satisfaction client fait de Prestige Auto votre partenaire de confiance pour la location de
-                    véhicules de luxe.</p>
+    <section id="testimonials" class="py-32 relative">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="mb-20 text-center reveal">
+                <span class="inline-block text-[10px] uppercase tracking-[0.3em] text-accent-500 mb-4">Héritage</span>
+                <h2 class="text-4xl md:text-5xl font-serif text-white tracking-tight">Le Cercle des Privilégiés</h2>
             </div>
 
-            <!-- Features Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
-                <div
-                    class="group p-8 rounded-3xl bg-slate-50 hover:bg-brand-50 transition-all duration-300 border border-transparent hover:border-brand-100 card-hover">
-                    <div
-                        class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:scale-110 transition-all duration-300">
-                        <i
-                            class="ph-fill ph-prohibit text-3xl text-brand-600 group-hover:text-white transition-colors duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Annulation Flexible</h3>
-                    <p class="text-slate-600 leading-relaxed">Annulation gratuite jusqu'à 24 heures avant le retrait
-                        sans frais supplémentaires.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div
-                    class="group p-8 rounded-3xl bg-slate-50 hover:bg-brand-50 transition-all duration-300 border border-transparent hover:border-brand-100 card-hover">
-                    <div
-                        class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:scale-110 transition-all duration-300">
-                        <i
-                            class="ph-fill ph-lifebuoy text-3xl text-brand-600 group-hover:text-white transition-colors duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Assistance 24h/24</h3>
-                    <p class="text-slate-600 leading-relaxed">Support disponible à tout moment pour toute urgence ou
-                        demande particulière.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div
-                    class="group p-8 rounded-3xl bg-slate-50 hover:bg-brand-50 transition-all duration-300 border border-transparent hover:border-brand-100 card-hover">
-                    <div
-                        class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:scale-110 transition-all duration-300">
-                        <i
-                            class="ph-fill ph-receipt text-3xl text-brand-600 group-hover:text-white transition-colors duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tarification Transparente</h3>
-                    <p class="text-slate-600 leading-relaxed">Aucun frais caché. Tous les coûts sont clairement indiqués
-                        lors de votre réservation.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div
-                    class="group p-8 rounded-3xl bg-slate-50 hover:bg-brand-50 transition-all duration-300 border border-transparent hover:border-brand-100 card-hover">
-                    <div
-                        class="w-16 h-16 bg-brand-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:scale-110 transition-all duration-300">
-                        <i
-                            class="ph-fill ph-sparkle text-3xl text-brand-600 group-hover:text-white transition-colors duration-300"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Véhicules Impeccables</h3>
-                    <p class="text-slate-600 leading-relaxed"> Chaque véhicule est minutieusement inspecté et nettoyé
-                        avant chaque location.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- TESTIMONIALS SECTION -->
-    <!-- ============================================ -->
-    <section id="testimonials" class="py-24 lg:py-32 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm">Témoignages</span>
-                <h2 class="mt-3 text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Ce Que Disent Nos Clients
-                </h2>
-                <p class="mt-4 text-slate-600 text-lg leading-relaxed">La satisfaction de nos clients est notre plus
-                    belle récompense. Découvrez leurs témoignages.</p>
-            </div>
-
-            <!-- Testimonials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div
-                    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col h-full relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                Y</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 leading-tight">Youssef Alaoui</h4>
-                                <div
-                                    class="flex items-center gap-1 text-[10px] text-slate-400 mt-1 uppercase tracking-wider">
-                                    <i class="ph-fill ph-google-logo text-blue-500"></i>
-                                    <span>Local Guide</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-0.5">
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
+                <div class="luxury-glass p-10 rounded-2xl relative overflow-hidden group reveal"
+                    style="transition-delay: 100ms;">
+                    <i
+                        class="ph-fill ph-quotes absolute top-4 right-4 text-8xl text-white/5 font-serif pointer-events-none transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-700"></i>
+                    <div class="flex gap-1 mb-8">
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                    </div>
+                    <p class="text-gray-300 font-serif italic text-lg leading-relaxed mb-8 relative z-10">"Une flotte
+                        impéccable et une discrétion absolue. La mise à disposition de la Porsche s'est faite avec une
+                        fluidité remarquable."</p>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div
+                            class="w-12 h-12 rounded-full ring-2 ring-accent-500/50 flex items-center justify-center bg-surface text-white font-serif">
+                            M</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold tracking-widest uppercase">Marc V.</h4>
+                            <span class="text-gray-500 text-xs">Client Exécutif</span>
                         </div>
                     </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow italic">"Une expérience
-                        exceptionnelle du début à la fin. Le véhicule était parfait et le service client remarquable. Je
-                        recommande fortement Prestige Auto pour une expérience de location haut de gamme."</p>
-                    <div class="text-xs text-slate-400 font-medium">Il y a 2 semaines</div>
                 </div>
 
                 <!-- Testimonial 2 -->
-                <div
-                    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col h-full relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                F</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 leading-tight">Fatima Zahra Benali</h4>
-                                <div
-                                    class="flex items-center gap-1 text-[10px] text-slate-400 mt-1 uppercase tracking-wider">
-                                    <i class="ph-fill ph-google-logo text-blue-500"></i>
-                                    <span>Verified User</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-0.5">
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
+                <div class="luxury-glass p-10 rounded-2xl relative overflow-hidden group reveal"
+                    style="transition-delay: 200ms;">
+                    <i
+                        class="ph-fill ph-quotes absolute top-4 right-4 text-8xl text-white/5 font-serif pointer-events-none transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-700"></i>
+                    <div class="flex gap-1 mb-8">
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                    </div>
+                    <p class="text-gray-300 font-serif italic text-lg leading-relaxed mb-8 relative z-10">"Excellence à
+                        tous les niveaux. Le Range Rover Autobiography commandé pour mon séjour d'affaires était dans un
+                        état sortie d'usine."</p>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
+                        <div
+                            class="w-12 h-12 rounded-full ring-2 ring-accent-500/50 flex items-center justify-center bg-surface text-white font-serif">
+                            S</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold tracking-widest uppercase">Sarah L.</h4>
+                            <span class="text-gray-500 text-xs">Partenaire Corporate</span>
                         </div>
                     </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow italic">"J'ai loué une Porsche 911
-                        pour mon mariage et l'expérience a été inoubliable. Le véhicule était en parfait état et le
-                        service de livraison à l'hôtel était très professionnel."</p>
-                    <div class="text-xs text-slate-400 font-medium">Il y a 1 mois</div>
                 </div>
 
                 <!-- Testimonial 3 -->
-                <div
-                    class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col h-full relative group">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                O</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 leading-tight">Omar Chraibi</h4>
-                                <div
-                                    class="flex items-center gap-1 text-[10px] text-slate-400 mt-1 uppercase tracking-wider">
-                                    <i class="ph-fill ph-google-logo text-blue-500"></i>
-                                    <span>Local Guide • 12 avis</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex gap-0.5">
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                            <i class="ph-fill ph-star text-sm text-[#FBBC04]"></i>
-                        </div>
+                <div class="luxury-glass p-10 rounded-2xl relative overflow-hidden group reveal"
+                    style="transition-delay: 300ms;">
+                    <i
+                        class="ph-fill ph-quotes absolute top-4 right-4 text-8xl text-white/5 font-serif pointer-events-none transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-700"></i>
+                    <div class="flex gap-1 mb-8">
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
+                        <i class="ph-fill ph-star text-accent-500 text-sm"></i>
                     </div>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-grow italic">"Service impeccablement
-                        professionnel. La Range Rover était magnifique et le suivi client excellent. Prestige Auto est
-                        devenu mon partenaire privilégié pour tous mes déplacement professionnels."</p>
-                    <div class="text-xs text-slate-400 font-medium">Il y a 3 mois</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- LOCATION SECTION -->
-    <!-- ============================================ -->
-    <section class="py-16 lg:py-24 bg-slate-50" id="location">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-accent-500 font-bold tracking-wider uppercase text-sm">Notre Emplacement</span>
-                <h2 class="mt-3 text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">Où Nous Trouver</h2>
-                <p class="mt-4 text-slate-600 text-lg leading-relaxed">Découvrez nos locaux au cœur du Maroc et venez
-                    nous rendre visite pour une expérience personnalisée.</p>
-            </div>
-            <div class="rounded-3xl overflow-hidden shadow-xl border border-slate-100">
-                <iframe src="https://maps.google.com/maps?q=Casablanca,%20Morocco&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- FOOTER -->
-    <!-- ============================================ -->
-    <footer class="bg-slate-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-12">
-                <!-- Column 1: Brand -->
-                <div class="lg:col-span-1">
-                    <a href="index.html" class="flex items-center gap-2 mb-6">
+                    <p class="text-gray-300 font-serif italic text-lg leading-relaxed mb-8 relative z-10">"Un service de
+                        conciergerie automobile rare à Casablanca. L'accueil, la ponctualité et la qualité des véhicules
+                        justifient pleinement leur positionnement."</p>
+                    <div class="flex items-center gap-4 border-t border-white/10 pt-6">
                         <div
-                            class="w-10 h-10 flex items-center justify-center text-white group-hover:shadow-brand-600/50 transition-shadow">
-                            <img src="./imgs/icons/prestigeauto_logo.png" alt="Prestige Auto Logo">
+                            class="w-12 h-12 rounded-full ring-2 ring-accent-500/50 flex items-center justify-center bg-surface text-white font-serif">
+                            K</div>
+                        <div>
+                            <h4 class="text-white text-sm font-bold tracking-widest uppercase">Karim B.</h4>
+                            <span class="text-gray-500 text-xs">Client Régulier</span>
                         </div>
-                        <span class="font-bold text-2xl tracking-tight"><span class="text-white"
-                                data-brand-name>Prestige</span><span class="text-brand-500"
-                                data-brand-accent>Auto</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER LAYER -->
+    <!-- ============================================ -->
+    <footer class="border-t border-white/10 bg-base pt-24 pb-12">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-20">
+                <!-- Branding -->
+                <div class="lg:col-span-5">
+                    <a href="index.html" class="inline-block mb-8">
+                        <span class="font-serif text-3xl tracking-widest text-white uppercase"><span
+                                data-brand-name>Prestige</span> <span data-brand-accent
+                                class="text-gold-gradient italic font-normal ml-1">Auto</span></span>
                     </a>
-                    <p class="text-slate-400 leading-relaxed mb-6" data-brand-tagline>Votre partenaire de confiance pour
-                        la location de
-                        véhicules de prestige au Maroc. Une excellence automobile à votre service.</p>
-                    <div class="flex gap-4">
-                        <a href="#" data-social-facebook
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200"
-                            aria-label="Facebook">
-                            <i class="ph-fill ph-facebook-logo text-xl"></i>
-                        </a>
-                        <a href="#" data-social-instagram
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200"
-                            aria-label="Instagram">
-                            <i class="ph-fill ph-instagram-logo text-xl"></i>
-                        </a>
-                        <a href="#" data-social-linkedin
-                            class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors duration-200"
-                            aria-label="LinkedIn">
-                            <i class="ph-fill ph-linkedin-logo text-xl"></i>
-                        </a>
+                    <p class="text-gray-500 text-sm font-light leading-relaxed mb-10 max-w-sm" data-brand-tagline>
+                        La référence de la location de véhicules d'exception au Maroc. L'élégance en mouvement.
+                    </p>
+                    <div class="flex gap-6">
+                        <a href="#" data-social-facebook class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="Facebook"><i class="ph-light ph-facebook-logo text-2xl"></i></a>
+                        <a href="#" data-social-instagram class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="Instagram"><i class="ph-light ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" data-social-linkedin class="text-gray-500 hover:text-accent-500 transition-colors"
+                            aria-label="LinkedIn"><i class="ph-light ph-linkedin-logo text-2xl"></i></a>
                     </div>
                 </div>
 
-                <!-- Column 2: Quick Links -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Liens Rapides</h4>
-                    <ul class="space-y-3">
+                <!-- Navigation -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Navigation</h4>
+                    <ul class="space-y-4">
                         <li><a href="index.html"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Accueil</a>
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Accueil</a>
                         </li>
-                        <li><a href="vehicles.html"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Notre
-                                Flotte</a></li>
+                        <li><a href="vehicule.html"
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">La
+                                Collection</a></li>
                         <li><a href="#services"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Services</a>
-                        </li>
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Nos
+                                Services</a></li>
                         <li><a href="contact.html"
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">Contact</a>
-                        </li>
+                                class="text-gray-500 hover:text-accent-500 text-sm font-light transition-colors">Contact
+                                Réservation</a></li>
                     </ul>
                 </div>
 
-                <!-- Column 3: Contact Info -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Contactez-nous</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="ph-fill ph-map-pin text-brand-500 text-xl mt-0.5"></i>
-                            <span class="text-slate-400" data-site-address-full>Boulevard d'Anfa<br>Casablanca,
-                                Maroc</span>
+                <!-- Contact -->
+                <div class="lg:col-span-4">
+                    <h4 class="text-white text-xs uppercase tracking-[0.2em] mb-8 font-semibold">Information</h4>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <i class="ph-light ph-map-pin text-accent-500 text-xl mt-0.5"></i>
+                            <span class="text-gray-400 text-sm font-light" data-site-address-full>Boulevard
+                                d'Anfa<br>Casablanca, Maroc</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-fill ph-phone text-brand-500 text-xl"></i>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-phone text-accent-500 text-xl"></i>
                             <a href="tel:212713440903" data-site-phone
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">+212 7 13 44
-                                09 03</a>
+                                class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">+212 7
+                                13 44 09 03</a>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="ph-fill ph-envelope text-brand-500 text-xl"></i>
+                        <li class="flex items-center gap-4">
+                            <i class="ph-light ph-envelope text-accent-500 text-xl"></i>
                             <a href="mailto:prestigeauto@gmail.com" data-site-email
-                                class="text-slate-400 hover:text-brand-500 transition-colors duration-200">prestigeauto@gmail.com</a>
+                                class="text-gray-400 hover:text-accent-500 text-sm font-light transition-colors">prestigeauto@gmail.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
-            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-500 text-sm">&copy; 2024 Prestige Auto. Tous droits réservés.</p>
-                <div class="flex gap-6 text-sm">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/5">
+                <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 Prestige Auto. Tous droits
+                    réservés.</p>
+                <div class="flex gap-8">
                     <a href="privacy.html"
-                        class="text-slate-500 hover:text-brand-500 transition-colors duration-200">Politique de
-                        Confidentialité</a>
+                        class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Confidentialité</a>
                     <a href="terms.html"
-                        class="text-slate-500 hover:text-brand-500 transition-colors duration-200">Conditions
-                        Générales</a>
+                        class="text-gray-600 hover:text-accent-500 text-xs tracking-widest uppercase transition-colors">Conditions</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================ -->
-    <!-- JAVASCRIPT -->
-    <!-- ============================================ -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <!-- Interactive Elements & Observers -->
     <script>
-        // ============================================
-        // NAVBAR SCROLL EFFECT
-        // ============================================
+        // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-
-        function handleScroll() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass', 'shadow-lg');
-                navbar.classList.remove('bg-transparent', 'py-4');
-                navbar.classList.add('py-3');
-            } else {
-                navbar.classList.remove('glass', 'shadow-lg', 'py-3');
-                navbar.classList.add('bg-transparent', 'py-4');
-            }
+        if (navbar) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('glass-nav', 'py-4');
+                    navbar.classList.remove('bg-transparent', 'py-6');
+                } else {
+                    navbar.classList.remove('glass-nav', 'py-4');
+                    navbar.classList.add('bg-transparent', 'py-6');
+                }
+            });
         }
-
-        handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        // ============================================
-        // MOBILE MENU TOGGLE
-        // ============================================
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-        let isMenuOpen = false;
-
-        function toggleMobileMenu() {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('animate-slide-down');
-                menuIcon.classList.remove('ph-list');
-                menuIcon.classList.add('ph-x');
-            } else {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('animate-slide-down');
-                menuIcon.classList.remove('ph-x');
-                menuIcon.classList.add('ph-list');
-            }
-        }
-
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (isMenuOpen) toggleMobileMenu();
-            });
-        });
-
-        document.addEventListener('click', (e) => {
-            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                toggleMobileMenu();
-            }
-        });
-
-        // ============================================
-        // SMOOTH SCROLL
-        // ============================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-
-        // ============================================
-        // BUTTON PRESS EFFECT
-        // ============================================
-        document.querySelectorAll('.btn-press').forEach(button => {
-            button.addEventListener('click', function () {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => { this.style.transform = ''; }, 150);
-            });
-        });
-
-        // ============================================
-        // DATE INPUT MIN DATE
-        // ============================================
-        document.addEventListener('DOMContentLoaded', () => {
-            const pickupDate = document.getElementById('pickup-date');
-            const returnDate = document.getElementById('return-date');
-            const today = new Date().toISOString().split('T')[0];
-            pickupDate.setAttribute('min', today);
-            returnDate.setAttribute('min', today);
-            pickupDate.addEventListener('change', function () {
-                returnDate.setAttribute('min', this.value);
-            });
-        });
     </script>
-
-    <script>
-        /**
-         * Iframe 元素高亮注入脚本
-         * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
-         *
-         * 使用方法：
-         * 1. 将此脚本添加到目标网站的 HTML 中
-         * 2. 或通过浏览器扩展、用户脚本等方式注入
-         */
-
-        (function () {
-            "use strict";
-
-            // 检查是否在 iframe 中
-            if (window.self === window.top) {
-                return; // 不在 iframe 中，不执行
-            }
-
-            // 检查是否已经初始化过
-            if (window.__iframeHighlightInitialized) {
-                return;
-            }
-            window.__iframeHighlightInitialized = true;
-            console.log("Iframe 高亮脚本已加载");
-
-            // 创建高亮覆盖层
-            var overlay = document.createElement("div");
-            overlay.id = "iframe-highlight-overlay";
-            overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
-
-            // 创建悬停高亮框（虚线边框）
-            var highlightBox = document.createElement("div");
-            highlightBox.id = "iframe-highlight-box";
-            highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
-
-            // 创建选中节点的常驻高亮框（实线边框）
-            var selectedBox = document.createElement("div");
-            selectedBox.id = "iframe-selected-box";
-            selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
-
-            // 创建悬停标签显示
-            var tagLabel = document.createElement("div");
-            tagLabel.id = "iframe-tag-label";
-            tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
-
-            // 创建选中节点标签
-            var selectedLabel = document.createElement("div");
-            selectedLabel.id = "iframe-selected-label";
-            selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
-            overlay.appendChild(highlightBox);
-            overlay.appendChild(selectedBox);
-            overlay.appendChild(tagLabel);
-            overlay.appendChild(selectedLabel);
-            document.body.appendChild(overlay);
-
-            // 存储当前选中的元素
-            var selectedElement = null;
-            var highlightEnabled = false;
-
-            // 更新选中元素的高亮显示
-            function updateSelectedHighlight(element) {
-                console.log("updateSelectedHighlight called with:", element);
-                if (!element) {
-                    selectedBox.style.display = "none";
-                    selectedLabel.style.display = "none";
-                    selectedElement = null;
-                    console.log("Cleared selected highlight");
-                    return;
-                }
-                selectedElement = element;
-                var rect = element.getBoundingClientRect();
-                console.log("Selected element rect:", rect);
-
-                // 更新选中高亮框位置
-                selectedBox.style.display = "block";
-                selectedBox.style.left = "".concat(rect.left - 2, "px");
-                selectedBox.style.top = "".concat(rect.top - 2, "px");
-                selectedBox.style.width = "".concat(rect.width + 4, "px");
-                selectedBox.style.height = "".concat(rect.height + 4, "px");
-
-                // 更新选中标签位置和内容
-                selectedLabel.style.display = "block";
-                selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
-
-                // 计算标签位置，确保不超出视窗
-                var labelTop = rect.top - 28;
-                var labelLeft = rect.left;
-
-                // 如果标签会超出顶部，显示在元素下方
-                if (labelTop < 5) {
-                    labelTop = rect.bottom + 5;
-                }
-
-                // 如果标签会超出右侧，向左调整
-                var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
-                if (labelLeft + labelWidth > window.innerWidth - 10) {
-                    labelLeft = window.innerWidth - labelWidth - 10;
-                }
-                selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
-                selectedLabel.style.top = "".concat(labelTop, "px");
-                console.log("Selected highlight positioned at:", {
-                    left: selectedBox.style.left,
-                    top: selectedBox.style.top,
-                    width: selectedBox.style.width,
-                    height: selectedBox.style.height
-                });
-            }
-            function getElementSelector(element) {
-                if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
-                var segments = [];
-                var current = element;
-                while (current !== document.documentElement) {
-                    var selector = '';
-                    // 优先检查唯一ID
-                    if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
-                        segments.unshift("#".concat(current.id));
-                        break; // ID唯一，无需继续向上
-                    }
-
-                    // 生成类名选择器（取第一个有效类名）
-                    var classes = Array.from(current.classList).filter(function (c) {
-                        return !c.startsWith('js-');
-                    });
-                    var className = classes.length > 0 ? ".".concat(classes[0]) : '';
-
-                    // 生成位置索引（nth-child）
-                    var tag = current.tagName.toLowerCase();
-                    if (!className) {
-                        var siblings = Array.from(current.parentNode.children);
-                        var index = siblings.findIndex(function (el) {
-                            return el === current;
-                        }) + 1;
-                        selector = "".concat(tag, ":nth-child(").concat(index, ")");
-                    } else {
-                        selector = className;
-                    }
-                    segments.unshift(selector);
-                    current = current.parentElement;
-                }
-
-                // 处理根元素
-                if (current === document.documentElement) {
-                    segments.unshift('html');
-                }
-                return segments.join(' > ');
-            }
-
-            // 获取元素文本内容
-            function getElementText(element) {
-                var _element$textContent;
-                if (element.tagName === "INPUT") {
-                    return element.value || element.placeholder || "";
-                }
-                if (element.tagName === "TEXTAREA") {
-                    return element.value || element.placeholder || "";
-                }
-                var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
-                return text.length > 50 ? text.substring(0, 50) + "..." : text;
-            }
-
-            // 获取元素属性信息
-            function getElementAttributes(element) {
-                var attrs = {};
-                for (var i = 0; i < element.attributes.length; i++) {
-                    var attr = element.attributes[i];
-                    attrs[attr.name] = attr.value;
-                }
-                return attrs;
-            }
-
-            // 鼠标悬停事件处理
-            function handleMouseOver(e) {
-                if (!highlightEnabled) return;
-                var target = e.target;
-                if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-                    return;
-                }
-
-                // 避免高亮 html 和 body 元素
-                if (target === document.documentElement || target === document.body) {
-                    return;
-                }
-
-                // 如果是已选中的元素，不显示悬停高亮
-                if (target === selectedElement) {
-                    highlightBox.style.display = "none";
-                    tagLabel.style.display = "none";
-                    return;
-                }
-                var rect = target.getBoundingClientRect();
-                var selector = getElementSelector(target);
-                var text = getElementText(target);
-                var attributes = getElementAttributes(target);
-
-                // 更新悬停高亮框位置
-                highlightBox.style.display = "block";
-                highlightBox.style.left = "".concat(rect.left - 2, "px");
-                highlightBox.style.top = "".concat(rect.top - 2, "px");
-                highlightBox.style.width = "".concat(rect.width + 4, "px");
-                highlightBox.style.height = "".concat(rect.height + 4, "px");
-
-                // 更新标签位置和内容
-                tagLabel.style.display = "block";
-                tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
-
-                // 计算标签位置，确保不超出视窗
-                var labelTop = rect.top - 22;
-                var labelLeft = rect.left;
-
-                // 如果标签会超出顶部，显示在元素下方
-                if (labelTop < 0) {
-                    labelTop = rect.bottom + 5;
-                }
-
-                // 如果标签会超出右侧，向左调整
-                if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
-                    labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
-                }
-                tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
-                tagLabel.style.top = "".concat(labelTop, "px");
-
-                // 发送消息到父窗口
-                var elementInfo = {
-                    tagName: target.tagName.toLowerCase(),
-                    rect: {
-                        left: rect.left,
-                        top: rect.top,
-                        right: rect.right,
-                        bottom: rect.bottom,
-                        width: rect.width,
-                        height: rect.height,
-                        x: rect.x,
-                        y: rect.y
-                    },
-                    selector: selector,
-                    text: text,
-                    attributes: attributes,
-                    url: window.location.href,
-                    path: window.location.pathname,
-                    timestamp: Date.now()
-                };
-                try {
-                    window.parent.postMessage({
-                        type: "iframe-element-hover",
-                        data: elementInfo,
-                        source: "iframe-highlight-injector"
-                    }, "*");
-                } catch (error) {
-                    console.warn("无法发送消息到父窗口:", error);
-                }
-            }
-
-            // 鼠标离开事件处理
-            function handleMouseOut(e) {
-                if (!highlightEnabled) return;
-                var relatedTarget = e.relatedTarget;
-
-                // 如果鼠标移动到高亮相关元素上，不隐藏高亮
-                if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
-                    return;
-                }
-                highlightBox.style.display = "none";
-                tagLabel.style.display = "none";
-                try {
-                    window.parent.postMessage({
-                        type: "iframe-element-hover",
-                        data: null,
-                        source: "iframe-highlight-injector"
-                    }, "*");
-                } catch (error) {
-                    console.warn("无法发送消息到父窗口:", error);
-                }
-            }
-
-            // 点击事件处理
-            function handleClick(e) {
-                var target = e.target;
-                if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-                    return;
-                }
-
-                // 避免处理 html 和 body 元素
-                if (target === document.documentElement || target === document.body) {
-                    return;
-                }
-
-                // 检查是否是交互元素，这些元素需要保留默认行为
-                var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
-
-                // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
-                if (highlightEnabled) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-                var rect = target.getBoundingClientRect();
-                var selector = getElementSelector(target);
-                var text = getElementText(target);
-                var attributes = getElementAttributes(target);
-                console.log("Element clicked:", {
-                    tagName: target.tagName,
-                    selector: selector,
-                    rect: rect
-                });
-
-                // 立即更新选中高亮
-                updateSelectedHighlight(target);
-
-                // 隐藏悬停高亮，因为现在是选中状态
-                highlightBox.style.display = "none";
-                tagLabel.style.display = "none";
-                var elementInfo = {
-                    tagName: target.tagName.toLowerCase(),
-                    rect: {
-                        left: rect.left,
-                        top: rect.top,
-                        right: rect.right,
-                        bottom: rect.bottom,
-                        width: rect.width,
-                        height: rect.height,
-                        x: rect.x,
-                        y: rect.y
-                    },
-                    selector: selector,
-                    text: text,
-                    attributes: attributes,
-                    url: window.location.href,
-                    path: window.location.pathname,
-                    timestamp: Date.now()
-                };
-                try {
-                    window.parent.postMessage({
-                        type: "iframe-element-click",
-                        data: elementInfo,
-                        source: "iframe-highlight-injector"
-                    }, "*");
-                } catch (error) {
-                    console.warn("无法发送消息到父窗口:", error);
-                }
-            }
-
-            // 监听来自父窗口的消息
-            function handleParentMessage(event) {
-                console.log("Received message from parent:", event.data);
-                if (event.data.type === "iframe-highlight-toggle") {
-                    var enabled = event.data.enabled;
-                    console.log("Highlight toggle:", enabled);
-                    if (enabled) {
-                        enableHighlight();
-                    } else {
-                        disableHighlight();
-                    }
-                } else if (event.data.type === "enable-iframe-highlight") {
-                    console.log("Enable iframe highlight");
-                    enableHighlight();
-                } else if (event.data.type === "disable-iframe-highlight") {
-                    console.log("Disable iframe highlight");
-                    disableHighlight();
-                } else if (event.data.type === "toggle-iframe-highlight") {
-                    var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
-                    console.log("Toggle iframe highlight to:", _enabled);
-                    if (_enabled) {
-                        enableHighlight();
-                    } else {
-                        disableHighlight();
-                    }
-                } else if (event.data.type === "update-selected-element") {
-                    var selector = event.data.selector;
-                    console.log("Update selected element with selector:", selector);
-                    if (selector) {
-                        try {
-                            var element = document.querySelector(selector);
-                            console.log("Found element by selector:", element);
-                            updateSelectedHighlight(element);
-                        } catch (error) {
-                            console.warn("Failed to select element:", error);
-                            updateSelectedHighlight(null);
-                        }
-                    } else {
-                        updateSelectedHighlight(null);
-                    }
-                } else if (event.data.type === "clear-selected-element") {
-                    console.log("Clear selected element");
-                    updateSelectedHighlight(null);
-                }
-            }
-
-            // 启用高亮功能
-            function enableHighlight() {
-                console.log("Enabling highlight");
-                document.addEventListener("mouseover", handleMouseOver, true);
-                document.addEventListener("mouseout", handleMouseOut, true);
-                document.addEventListener("click", handleClick, true);
-                highlightEnabled = true;
-                overlay.style.display = "block";
-            }
-
-            // 禁用高亮功能
-            function disableHighlight() {
-                console.log("Disabling highlight");
-                highlightEnabled = false;
-                // 保持事件监听器，但通过 highlightEnabled 变量控制行为
-                // 这样可以保留选中状态的显示
-                highlightBox.style.display = "none";
-                tagLabel.style.display = "none";
-                // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
-            }
-
-            // 完全禁用高亮功能（移除所有监听器）
-            function fullyDisableHighlight() {
-                console.log("Fully disabling highlight");
-                highlightEnabled = false;
-                document.removeEventListener("mouseover", handleMouseOver, true);
-                document.removeEventListener("mouseout", handleMouseOut, true);
-                document.removeEventListener("click", handleClick, true);
-                overlay.style.display = "none";
-                highlightBox.style.display = "none";
-                tagLabel.style.display = "none";
-                selectedBox.style.display = "none";
-                selectedLabel.style.display = "none";
-            }
-
-            // 添加事件监听
-            enableHighlight();
-            window.addEventListener("message", handleParentMessage);
-
-            // 暴露全局函数供外部调用
-            window.__iframeHighlightControl = {
-                enable: enableHighlight,
-                disable: disableHighlight,
-                fullyDisable: fullyDisableHighlight,
-                isEnabled: function isEnabled() {
-                    return highlightEnabled;
-                },
-                getSelectedElement: function getSelectedElement() {
-                    return selectedElement;
-                },
-                updateSelected: updateSelectedHighlight,
-                // 通过消息发送开关控制
-                sendToggleMessage: function sendToggleMessage(enabled) {
-                    window.parent.postMessage({
-                        type: 'iframe-highlight-status',
-                        enabled: enabled || highlightEnabled,
-                        source: 'iframe-highlight-injector'
-                    }, '*');
-                }
-            };
-
-            // 通知父窗口脚本已加载
-            try {
-                window.parent.postMessage({
-                    type: "iframe-highlight-ready",
-                    data: {
-                        url: window.location.href,
-                        userAgent: navigator.userAgent,
-                        timestamp: Date.now()
-                    },
-                    source: "iframe-highlight-injector"
-                }, "*");
-            } catch (error) {
-                console.warn("无法发送就绪消息到父窗口:", error);
-            }
-
-            // 清理函数
-            window.__iframeHighlightCleanup = function () {
-                fullyDisableHighlight();
-                window.removeEventListener("message", handleParentMessage);
-                if (overlay.parentElement) {
-                    overlay.parentElement.removeChild(overlay);
-                }
-                delete window.__iframeHighlightInitialized;
-                delete window.__iframeHighlightCleanup;
-            };
-        })();
-
-    </script>
-    <script>
-        // Pass car data to reservation page via URL parameters
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.fleet-card').forEach(card => {
-                const nameEl = card.querySelector('h3');
-                const imgEl = card.querySelector('img');
-                const btn = card.querySelector('a[href="reservation.html"]');
-
-                if (nameEl && imgEl && btn) {
-                    const name = nameEl.textContent.trim();
-                    const img = imgEl.getAttribute('src');
-                    btn.href = `reservation.html?car=${encodeURIComponent(name)}&img=${encodeURIComponent(img)}`;
-                }
-            });
-        });
-    </script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/212713440903" data-site-whatsapp target="_blank"
+    <a href="#" data-site-whatsapp target="_blank"
         class="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group">
         <i class="ph-fill ph-whatsapp-logo text-4xl"></i>
     </a>
-
-    <!-- Core Scripts -->
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Scripts End -->
 </body>
 
 </html>
